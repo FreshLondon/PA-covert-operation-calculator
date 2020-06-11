@@ -47,21 +47,38 @@ function getGovernmentBonus() {
 function calculateTotal() {
 	var guards = parseInt(document.getElementById("guards").value);
 	var roids = parseInt(document.getElementById("roids").value);
-	var guardsRoids = 0;
-	var maxGuardsRoids = 15;
-	if((guards / (roids + 1) > maxGuardsRoids)) guardsRoids = 15;
+	var guardsRoids = (guards / (roids + 1));
+	if(guardsRoids > 15) guardsRoids = 15;
 	var guardsBase = 50 + (5 * guardsRoids);
-	console.log('guardsBase = '+ guardsBase)
+	console.log('guardsBase = ' + guardsBase)
+	//display the result
+	var guardsBaseTotal = document.getElementById("guardsbase_total")
+	if(isNaN(guardsBase)) {
+		guardsBase = 0;
+	} else {
+		guardsBaseTotal.innerHTML = "Guards / Base: " + Math.floor(guardsBase);
+	}
+
 
 	var securitycentres = parseInt(document.getElementById("securitycentres").value);
 	var population = parseInt(document.getElementById("population").value);
 	var modifier = 1 + (((securitycentres * 2.75) + getGovernmentBonus() + population) / 100);
-	console.log('modifier = '+ modifier)
-	var totalAlert = guardsBase * modifier;
-
-
+	console.log('modifier = ' + modifier)
 	//display the result
-	var divobj = document.getElementById('totalAlert');
-	divobj.style.display = 'block';
-	divobj.innerHTML = "Total alert: " + totalAlert;
+	var modifierTotal = document.getElementById("modifier_total")
+	if(isNaN(modifier)) {
+		modifier = 0;
+	} else {
+		modifierTotal.innerHTML = "Modifier: " + modifier;
+	}
+
+	var totalAlert = Math.floor(guardsBase * modifier);
+	console.log('Total alert = ' + totalAlert)
+	if(isNaN(totalAlert)) {
+		// do nothing
+	} else {
+		//display the result
+		var divobj = document.getElementById('totalAlert');
+		divobj.innerHTML = "Total alert: " + totalAlert;
+	}
 }

@@ -12,18 +12,19 @@
     <form action="" id="covopcalc" onsubmit="return false;">
         <div>
             <label>Guards</label>
-            <input type="number" name="guards" id="guards" onclick="calculateTotal()">
+            <input type="number" name="guards" id="guards" onclick="calculateTotal()" onkeyup="calculateTotal()">
         </div>
 
         <div>
             <label>Roids</label>
-            <input type="number" name="roids" id="roids" onclick="calculateTotal()">
+            <input type="number" name="roids" id="roids" onclick="calculateTotal()" onkeyup="calculateTotal()">
         </div>
+        <div id="guardsbase_total"></div>
 
         <div>
             <label>Government</label>
-            <select  id="government" name="government" onclick="calculateTotal()">
-                <option value="None"></option>
+            <select id="government" name="government" onclick="calculateTotal()" onkeyup="calculateTotal()">
+                <option value="None" selected="selected"></option>
                 <option value="Corporatism">Corporatism</option>
                 <option value="Democracy">Democracy</option>
                 <option value="Nationalism">Nationalism</option>
@@ -43,9 +44,10 @@
 
         <div>
             <label>Security centres</label>
-            <input type="number" name="securitycentres" id="securitycentres" onclick="calculateTotal()">
+            <input type="number" name="securitycentres" id="securitycentres" value="0" onclick="calculateTotal()"
+                   onkeyup="calculateTotal()">
         </div>
-
+        <div id="modifier_total"></div>
         <div id="totalAlert"></div>
 
 
