@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Covert operations calculator</h1>
+    <form action="" id="covopcalc" onsubmit="return false;">
+        <div>
+            <label>Guards</label>
+            <input type="number" name="guards" id="guards" onclick="calculateTotal()">
+        </div>
+
+        <div>
+            <label>Roids</label>
+            <input type="number" name="roids" id="roids" onclick="calculateTotal()">
+        </div>
+
+        <div>
+            <label>Government</label>
+            <select  id="government" name="government" onclick="calculateTotal()">
+                <option value="None"></option>
+                <option value="Corporatism">Corporatism</option>
+                <option value="Democracy">Democracy</option>
+                <option value="Nationalism">Nationalism</option>
+                <option value="Socialism">Socialism</option>
+                <option value="Totalitarianism">Totalitarianism</option>
+                <option value="Anarchy">Anarchy</option>
+            </select>
+        </div>
+
+        <div class="range-container">
+            <label>Population</label>
+            <div class="range-wrap">
+                <input type="range" class="range" value="0" min="0" max="50">
+                <output class="bubble" id="population"></output>
+            </div>
+        </div>
+
+        <div>
+            <label>Security centres</label>
+            <input type="number" name="securitycentres" id="securitycentres" onclick="calculateTotal()">
+        </div>
+
+        <div id="totalAlert"></div>
+
+
+    </form>
+    <script type="text/javascript" src="js/formcalculations.js"></script>
+</div>
+</body>
+</html>
