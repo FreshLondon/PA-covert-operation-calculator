@@ -12,18 +12,18 @@
     <form action="" id="covopcalc" onsubmit="return false;">
         <div>
             <label>Guards</label>
-            <input type="number" name="guards" id="guards" onclick="calculateTotal()" onkeyup="calculateTotal()">
+            <input type="number" name="guards" id="guards" onclick="calculateTotalAlert()" onkeyup="calculateTotalAlert()">
         </div>
 
         <div>
             <label>Roids</label>
-            <input type="number" name="roids" id="roids" onclick="calculateTotal()" onkeyup="calculateTotal()">
+            <input type="number" name="roids" id="roids" onclick="calculateTotalAlert()" onkeyup="calculateTotalAlert()">
         </div>
         <div id="guardsbase_total"></div>
 
         <div>
             <label>Government</label>
-            <select id="government" name="government" onchange="calculateTotal()">
+            <select id="government" name="government" onchange="calculateTotalAlert()">
                 <option value="None" selected="selected"></option>
                 <option value="Corporatism">Corporatism</option>
                 <option value="Democracy">Democracy</option>
@@ -37,19 +37,43 @@
         <div class="range-container">
             <label>Population</label>
             <div class="range-wrap">
-                <input type="range" class="range" value="0" min="0" max="50" onchange="calculateTotal()">
+                <input type="range" class="range" value="0" min="0" max="50" onchange="calculateTotalAlert()">
                 <output class="bubble" id="population"></output>
             </div>
         </div>
 
         <div>
             <label>Security centres</label>
-            <input type="number" name="securitycentres" id="securitycentres" value="0" onclick="calculateTotal()"
-                   onkeyup="calculateTotal()">
+            <input type="number" name="securitycentres" id="securitycentres" value="0" onclick="calculateTotalAlert()"
+                   onkeyup="calculateTotalAlert()">
         </div>
         <div id="modifier_total"></div>
         <div id="totalAlert"></div>
 
+
+
+        <h2>Cov op success calc:</h2>
+        <div>
+            <label>Current stealth</label>
+            <input type="number" name="currentStealth" id="currentStealth" value="90" onclick="calculateTotalStealth()"
+                   onkeyup="calculateTotalStealth()">
+        </div><div>
+            <label>Agents used</label>
+            <input type="number" name="agentsUsed" id="agentsUsed" value="10" onclick="calculateTotalStealth()"
+                   onkeyup="calculateTotalStealth()">
+        </div><div>
+            <label>Targ alert</label>
+            <input type="number" name="targAlert" id="targAlert" value="10" onclick="calculateTotalStealth()"
+                   onkeyup="calculateTotalStealth()">
+        </div><div>
+            <label>New stealth</label>
+            <input type="number" name="newStealth" id="newStealth" value="0" onclick="calculateTotalStealth()"
+                   onkeyup="calculateTotalStealth()">
+        </div><div>
+            <label>Succes if >1</label>
+            <input type="number" name="succesIf" id="succesIf" value="0" onclick="calculateTotalStealth()"
+                   onkeyup="calculateTotalStealth()">
+        </div>
 
     </form>
     <script type="text/javascript" src="js/formcalculations.js"></script>

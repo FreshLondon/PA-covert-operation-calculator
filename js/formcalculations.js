@@ -44,7 +44,7 @@ function getGovernmentBonus() {
 }
 
 
-function calculateTotal() {
+function calculateTotalAlert() {
 	var guards = parseInt(document.getElementById("guards").value);
 	var roids = parseInt(document.getElementById("roids").value);
 	var guardsRoids = (guards / (roids + 1));
@@ -81,4 +81,21 @@ function calculateTotal() {
 		var divobj = document.getElementById('totalAlert');
 		divobj.innerHTML = "Total alert: " + totalAlert;
 	}
+	var targAlert = document.getElementById("targAlert");
+	targAlert.value = totalAlert;
+}
+
+function calculateTotalStealth() {
+	var currentStealth = parseInt(document.getElementById("currentStealth").value);
+	var agentsUsed = parseInt(document.getElementById("agentsUsed").value);
+	var targAlert = parseInt(document.getElementById("targAlert").value);
+	var newStealth = document.getElementById("newStealth");
+	var succesIf = document.getElementById("succesIf");
+
+	var newStealthValue = (currentStealth - 5 - (agentsUsed * 0.5));
+	console.log(newStealthValue);
+	newStealth.value = newStealthValue;
+
+	var successIfValue = ((Math.floor(Math.random() * 9 + 1)) + newStealthValue - targAlert);
+	succesIf.value = successIfValue;
 }
