@@ -23,7 +23,7 @@
 
         <div>
             <label>Government</label>
-            <select id="government" name="government" onclick="calculateTotal()" onkeyup="calculateTotal()">
+            <select id="government" name="government" onchange="calculateTotal()">
                 <option value="None" selected="selected"></option>
                 <option value="Corporatism">Corporatism</option>
                 <option value="Democracy">Democracy</option>
@@ -37,7 +37,7 @@
         <div class="range-container">
             <label>Population</label>
             <div class="range-wrap">
-                <input type="range" class="range" value="0" min="0" max="50">
+                <input type="range" class="range" value="0" min="0" max="50" onchange="calculateTotal()">
                 <output class="bubble" id="population"></output>
             </div>
         </div>
